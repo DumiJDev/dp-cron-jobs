@@ -385,7 +385,6 @@ public class DPCron {
         }
       }
 
-      // Sort the values for more predictable behavior
       target.sort(Integer::compareTo);
     }
 
@@ -398,7 +397,6 @@ public class DPCron {
     public ZonedDateTime getNextValidTime(ZonedDateTime after) {
       ZonedDateTime candidate = after.truncatedTo(ChronoUnit.MINUTES).plusMinutes(1);
 
-      // Limit iterations to avoid infinite loops with invalid expressions
       int iterations = 0;
       int maxIterations = 1000000; // ~2 years when checking minute by minute
 
@@ -424,7 +422,7 @@ public class DPCron {
       int hour = time.getHour();
       int dayOfMonth = time.getDayOfMonth();
       int month = time.getMonthValue();
-      int dayOfWeek = time.getDayOfWeek().getValue() % 7; // Adjust to 0-6 range where 0 is Sunday
+      int dayOfWeek = time.getDayOfWeek().getValue() % 7;
 
       return minutes.contains(minute) &&
           hours.contains(hour) &&
