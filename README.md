@@ -1,5 +1,3 @@
-Sure! Here's the `README.md` translated into English and adapted for a developer audience:
-
 # DPCron
 
 **DPCron** is a lightweight Java library for scheduling background tasks using Unix-style cron expressions. It provides
