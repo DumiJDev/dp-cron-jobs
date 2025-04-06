@@ -103,6 +103,7 @@ DPCron cron = new DPCron(int threadPoolSize); // Manual thread pool size
 ```java
 cron.schedule("0 */2 * * *",() ->{
     // Runs every 2 hours
+    });
 ```
 
 ## ⚠️ Notes
